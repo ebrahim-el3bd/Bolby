@@ -751,7 +751,7 @@ body {
         border: 1px solid $borderColor;
         position: relative;
         left: 30px;
-        top: 60px;
+        top: 50px;
         @include Border_Radius;
         text-align: center;
         background: #ffd15c;
@@ -1433,6 +1433,15 @@ body {
 }
 @media (min-width: 1282px) {
   .btnn {
+    display: none;
+  }
+}
+
+@media (min-width: 250px) and (max-width: 400px){
+  .all-Everything .in-all-Everything .effects .iconf{
+    display: none;
+  }
+  .all-Everything .in-all-Everything .effects .iconf .fas{
     display: none;
   }
 }

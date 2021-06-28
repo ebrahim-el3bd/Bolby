@@ -625,7 +625,7 @@ body {
         border: 1px solid transparent;
         position: relative;
         left: 30px;
-        top: 60px;
+        top: 50px;
         border-radius: 30px;
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;
@@ -1393,6 +1393,12 @@ body {
     display: none; } }
 @media (min-width: 1282px) {
   .btnn {
+    display: none; } }
+@media (min-width: 250px) and (max-width: 400px) {
+  .all-Everything .in-all-Everything .effects .iconf {
+    display: none; }
+
+  .all-Everything .in-all-Everything .effects .iconf .fas {
     display: none; } }
 
 /*# sourceMappingURL=style.css.map */
