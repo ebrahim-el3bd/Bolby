@@ -1,0 +1,1436 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  outline: none;
+}
+/*********************************************
+**************** Site map *********************
+1/Nav Bar
+2/_Screen Logo
+3/Sec About Me
+4/Sec Icomn
+5/Sec Service
+6/Sec Experience
+7/Sec Recent Works
+8/Sec pricing plans
+9/Sec all-Clients-Review
+10/Sec Latest-Posts
+11/Sec Get-in-Touch
+
+************************************************/
+
+/*---------------------------------------------------*/
+/*start var */
+$borderColor: transparent;
+// $borderColor:red;
+/*end var */
+/*---------------------------------------------------*/
+@mixin animation1 {
+  animation: flicker-3 2.5s linear infinite both;
+  @keyframes flicker-3 {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    32.98% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 0;
+    }
+    34% {
+      opacity: 0;
+    }
+    34.02% {
+      opacity: 1;
+    }
+    34.98% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0;
+    }
+    35.9% {
+      opacity: 0;
+    }
+    35.92% {
+      opacity: 1;
+    }
+    38.98% {
+      opacity: 1;
+    }
+    39% {
+      opacity: 0;
+    }
+    39.8% {
+      opacity: 0;
+    }
+    39.82% {
+      opacity: 1;
+    }
+    83.98% {
+      opacity: 1;
+    }
+    84% {
+      opacity: 0;
+    }
+    84.9% {
+      opacity: 0;
+    }
+    84.92% {
+      opacity: 1;
+    }
+  }
+}
+/*---------------------------------------------------*/
+@mixin animation2button {
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+/*---------------------------------------------------*/
+@mixin boxshadow {
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+  /*---------------------------------------------------*/
+@mixin animation-for-serives {
+  -webkit-animation: shake-horizontal 0.8s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  /*---------------------------------------------------*/
+  @-webkit-keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    80% {
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px);
+    }
+    90% {
+      -webkit-transform: translateX(-8px);
+      transform: translateX(-8px);
+    }
+  }
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    80% {
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px);
+    }
+    90% {
+      -webkit-transform: translateX(-8px);
+      transform: translateX(-8px);
+    }
+  }
+}
+/*---------------------------------------------------*/
+@mixin buttons {
+  margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    background: #ff4c60;
+    padding: 10px 30px;
+    border: 2px solid #ff4c60;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 18px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    &:hover {
+      @include animation2button;
+    }
+}
+/*---------------------------------------------------*/
+@mixin ST_Form{
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid  rgb(249, 249, 255);
+}
+/*---------------------------------------------------*/
+@mixin Border_Radius{
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+/*---------------------------------------------------*/
+body {
+  background-color: #f9f9ff;
+}
+/*---------------------------------------------------*/
+
+
+/*------------------Start_Nav Bar ------------------*/
+.container-sub {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 22;
+  background-color: #f9f9ff;
+  .container {
+    border: 1px solid $borderColor;
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9ff;
+    .logo {
+      border: 1px solid $borderColor;
+      width: 150px;
+      height: auto;
+      text-align: center;
+      background-color: #f9f9ff;
+      h2 {
+        color: #353353;
+        font-size: 40px;
+        span {
+          color: #ff4c60;
+        }
+      }
+    }
+    .link {
+      border: 1px solid $borderColor;
+      width: 800px;
+      height: auto;
+      background-color: #f9f9ff;
+      ul {
+        list-style: none;
+        float: right;
+        li {
+          display: inline-block;
+          margin-right: 20px;
+          margin-left: 20px;
+          padding: 10px 0px;
+          .Home {
+            color: #ffd15c;
+          }
+          a {
+            text-decoration: none;
+            color: #353353;
+            font-size: 18px;
+            font-weight: bold;
+            &:hover {
+              color: #ffd15c;
+            }
+          }
+        }
+      }
+    }
+    .btnn {
+      text-align: center;
+      padding: 10px 15px;
+      .fas {
+        color: #353353;
+        border: 1px solid #353353;
+        border-radius: 8px;
+        padding: 5px 10px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+      }
+    }
+  }
+}
+/*------------------End_Nav Bar ------------------*/
+
+/*------------------Start class For JS ------------------*/
+.active {
+  display: block !important;
+}
+/*------------------End class For JS ------------------*/
+
+/*------------------Start_Screen Logo ------------------*/
+.all-photo-logo {
+  border: 2px solid $borderColor;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .photo-logo {
+    border: 2px solid $borderColor;
+    height: 600px;
+    width: auto; /*400px*/
+    text-align: center;
+    .avatar {
+      margin-top: 100px;
+      display: inline-block;
+      padding: 0px 40px;
+    }
+    h1 {
+      padding: 20px 40px;
+      color: #353353;
+      font-weight: 700;
+      font-size: 40px;
+    }
+    p {
+      font-weight: bold;
+      padding: 0 40px;
+      color: #353353;
+      @include animation1;
+    }
+    .all-link {
+      border: 1px solid $borderColor;
+      margin-top: 20px;
+      height: auto;
+      ul {
+        list-style: none;
+        li {
+          display: inline-block;
+          padding: 10px 5px;
+          a {
+            text-decoration: none;
+            .fab {
+              font-size: 25px;
+              color: #353353;
+              &:hover {
+                color: #ffd15c;
+              }
+            }
+          }
+        }
+      }
+    }
+    button {
+    @include buttons;
+    }
+  }
+}
+/*------------------End_Screen Logo ------------------*/
+
+/*------------------Start_Sec About Me ------------------*/
+.About-Me {
+  border: 1px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  h1 {
+    color: #353353;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 20px 0px;
+  }
+}
+
+.con-for-sec-About-me {
+  border: 2px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .photo-for-About-me {
+    width: 200px;
+    border: 1px solid $borderColor;
+    height: 160px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .all-text-Development {
+    border: 2px solid $borderColor;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .all-text-Development::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    background-color: red;
+    position: relative;
+    top: 56px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #f9f9ff #fff #f9f9ff #f9f9ff;
+  }
+  .cv-text-for-About-me {
+    border: 1px solid $borderColor;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #fff;
+    @include boxshadow;
+    p {
+      padding: 20px 45px;
+      font-size: 18px;
+      line-height: 25px;
+    }
+    button {
+      @include buttons;
+      margin-left: 45px;
+    }
+  }
+  .Development-for-about-me {
+    border: 1px solid $borderColor;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fff;
+    @include boxshadow;
+    .Development-progress {
+      border: 1px solid $borderColor;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .label p {
+        font-weight: bold;
+        padding: 0px 20px;
+        color: #353353;
+      }
+    }
+    .out-s-pr1 {
+      height: 10px;
+      background-color: #f9f9ff;
+      width: 355px;
+      margin: 10px auto;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      .in-progress {
+        border-radius: 20px;
+        width: 280px;
+        height: 100%;
+        background: rgb(255, 209, 92);
+      }
+    }
+    .out-s-pr1 .pr2 {
+      background: rgb(255, 76, 96);
+      width: 300px;
+    }
+    .out-s-pr1 .pr3 {
+      background: rgb(108, 108, 229);
+      width: 270px;
+    }
+  }
+}
+
+/*------------------End_Sec About Me ------------------*/
+
+/*------------------Start_Sec Icomn ------------------*/
+.all-icon-pro {
+  border: 2px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  height: auto;
+  background-color: #f9f9ff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .in-icon-pro {
+    border: 1px solid $borderColor;
+    width: 250px;
+    height: 150px;
+    background-color: #f9f9ff;
+    .fas {
+      color: #ccc;
+      padding: 20px 0px;
+    }
+    h2 {
+      display: inline-block;
+      font-size: 35px;
+      padding: 20px 30px;
+      color: #454360;
+    }
+    p {
+      font-size: 16px;
+      color: #454360;
+      padding: 10px 0px;
+      font-weight: 100;
+    }
+  }
+}/*------------------End_Sec Icomn ------------------*/
+
+/*------------------Start_Sec Services ------------------*/
+.Services {
+  border: 1px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  h2 {
+    color: #353353;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 20px 0px;
+  }
+}
+.all-Services {
+  border: 1px solid $borderColor;
+  width: 85%;
+  margin: auto;
+  margin-top: 100px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 15;
+  .all-Services-in {
+    width: 334px;
+    height: auto;
+    text-align: center;
+    border: 1px solid $borderColor;
+    margin: 20px 20px;
+    padding: 30px 10px;
+    @include Border_Radius;
+    &:hover {
+      @include animation-for-serives;
+    }
+  }
+  .img1 {
+    background: rgb(108, 108, 229);
+    h2 {
+      padding: 10px 0px;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+      font-weight: 100;
+      line-height: 25px;
+    }
+  }
+  .img2 {
+    background: rgb(249, 215, 76);
+    h2 {
+      padding: 10px 0px;
+      color: #353353;
+    }
+    p {
+      color: #353353;
+      font-weight: 100;
+      line-height: 25px;
+    }
+  }
+  .img3 {
+    background: rgb(249, 123, 139);
+    h2 {
+      padding: 10px 0px;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+      font-weight: 100;
+      line-height: 25px;
+    }
+  }
+}
+/*------------------End_Sec Services ------------------*/
+
+/*------------------Start_Sec Experience ------------------*/
+.Click-here {
+  border: 2px solid $borderColor;
+  width: 100%;
+  margin: auto;
+  height: 50px;
+  text-align: center;
+  p {
+    margin-top: 20px;
+    color: #353353;
+    a {
+      text-decoration: none;
+      color: #ff4c60;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.Experience {
+  @extend .Services;
+}
+.all-contianer-Experience {
+  border: 1px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .all-contianer-Experience1 {
+    border: 1px solid $borderColor;
+    width: 500px;
+    height: auto;
+    @include Border_Radius;
+    padding: 30px 20px;
+    margin: 20px 0px;
+    background-color: #fff;
+    @include boxshadow;
+    .Acamedic-all-contianer-Experience1 {
+      height: auto;
+      border: 1px solid $borderColor;
+      border-left: 1px solid red;
+      padding: 0px 8px;
+      .hat {
+        color: red;
+        font-size: 30px;
+        position: relative;
+        right: 25px;
+        display: inline-block;
+      }
+      h6 {
+        display: inline-block;
+        color: #8b88b1;
+        font-size: 14px;
+      }
+      h2 {
+        font-size: 20px;
+        display: block;
+        margin-left: 30px;
+        padding: 10px 0px;
+        color: #454360;
+        font-weight: 700;
+      }
+      p {
+        color: #5e5c7f;
+        margin-left: 30px;
+      }
+      .bag {
+        color: red;
+        font-size: 25px;
+        position: relative;
+        right: 21px;
+      }
+    }
+  }
+}
+/*------------------End_Sec Experience ------------------*/
+
+/*------------------Start_Sec Recent Works ------------------*/
+.Recent-Works {
+  @extend .Services;
+}
+
+.link-for-Recent-Works {
+  @extend .Services;
+  margin-top: 50px;
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      margin-right: 35px;
+      padding: 20px 0px;
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #454360;
+        font-weight: bold;
+        &:hover {
+          color: #ff4c60;
+        }
+      }
+      .Everything {
+        color: #ff4c60;
+      }
+    }
+  }
+}
+
+.all-Everything {
+  border: 1px solid $borderColor;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .in-all-Everything {
+    width: 350px;
+    height: auto; /*300px*/
+    border: 1px solid $borderColor;
+    margin: 13px 0px;
+    background-color: #fff;
+    @include boxshadow;
+    @include Border_Radius;
+    position: relative;
+    &:hover .effects {
+      display: block;
+    }
+    .effects {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      display: none;
+      span {
+        margin-left: 40px;
+        color: #fff;
+        font-weight: 500;
+        padding: 0px 10px;
+        padding-bottom: 5px;
+        font-size: 15px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background: #ff4c60;
+        cursor: pointer;
+      }
+      h2 {
+        color: #fff;
+        padding: 30px 40px;
+      }
+      &:hover {
+        background-color: rgba(108, 108, 229, 0.842);
+      }
+      .iconf {
+        width: 50px;
+        height: 50px;
+        border: 1px solid $borderColor;
+        margin: 80px 40px;
+        @include Border_Radius;
+        text-align: center;
+        background: #ffd15c;
+        cursor: pointer;
+        .fas,
+        .far {
+          margin-top: 8px;
+          font: normal;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .imgvsg {
+    height: 100%;
+    width: 100%;
+    @include Border_Radius;
+  }
+}
+
+.bttn-for-recent {
+  @extend .Services;
+  margin-top: 30px;
+  text-align: center;
+  button {
+    @include buttons;
+  }
+}
+/*------------------End_Sec Recent Works ------------------*/
+
+
+/*------------------Start_Sec pricing plans ------------------*/
+.pricing{
+  @extend .Services;
+  border: 2px solid $borderColor;
+  margin-top: 15px;
+}
+.all-plans{
+  border: 1px solid $borderColor;
+  width: 80%;
+  height: auto;/*600px*/
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  .plans-A{
+    border: 1px solid $borderColor;
+    width: 330px;
+    height: 500px;
+    margin: 15px 0px;
+    @include Border_Radius;
+    padding: 30px 30px;
+    background-color: #fff;
+    h3{
+      color: #353353;
+      font-weight: 700;
+      margin: 15px 0px;
+      font-size: 30px;
+    }
+    p{
+      color: #353353;
+      line-height: 30px;
+    }
+    h2{
+    padding: 15px 0px;
+    font-size: 45px;
+    color: #353353;
+    sup{
+      font-size: 20px;
+      color: #353353;
+    }
+    span{
+      font-size: 15px;
+      font-weight: normal;
+      color: #353353;
+    }
+    }
+    button{
+      @include buttons;
+    }
+    @include boxshadow;
+  }
+  .plans-AsA{
+    border: 1px solid $borderColor;
+    width: 380px;
+    height: 600px;
+    margin: 15px 0px;
+    @include Border_Radius;
+    padding: 60px 30px;
+    background-color: #fff;
+    position: relative;
+    .div-span{
+      background: #6c6ce5;
+      padding: 8px 0px;
+      width: 50%;
+      font-weight: bold;
+      color: #fff;
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+      position: absolute;
+      top: 75px;
+      left: -50px;
+      transform:rotate(-90deg);
+      -webkit-transform:rotate(-90deg);
+      -moz-transform:rotate(-90deg);
+      -ms-transform:rotate(-90deg);
+      -o-transform:rotate(-90deg);
+}
+    h3{
+      color: #353353;
+      font-weight: 700;
+      margin: 15px 0px;
+      font-size: 30px;
+    }
+    p{
+      color: #353353;
+      line-height: 30px;
+    }
+    h2{
+      padding: 15px 0px;
+      font-size: 45px;
+      color: #353353;
+      margin-top: 10px;
+      sup{
+        font-size: 20px;
+        color: #353353;
+      }
+      span{
+        font-size: 15px;
+        font-weight: normal;
+        color: #353353;
+      }
+    }
+    button{
+      @include buttons;
+      margin-top: 20px;
+    }
+    @include boxshadow;
+  }
+}
+
+/*------------------End_Sec pricing plans ------------------*/
+
+
+/*------------------Start_Sec all-Clients-Review------------------*/
+
+.Clients-Review{
+  @extend .Services;
+}
+
+.all-Clients-Review{
+  border: 1px solid $borderColor;
+  width: 70%;
+  margin: auto;
+  height: auto;
+  text-align: center;
+  padding: 30px 50px;
+  position: relative;
+  h2{
+    color: #454360;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 20px 0;
+  }
+  p{
+    color: #8b88b1;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .all-Clients-Review-in{
+    border: 1px solid $borderColor;
+    padding: 20px 20px;
+    @include Border_Radius;
+    height: auto;
+    background-color: #fff;
+    @include  boxshadow;
+    }
+    p{
+      margin-top: 30px;
+    }
+    .all-Clients-Review-in::before{
+      content: "";
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 185px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    }
+  }
+  .all-icon-beforall-Clients{
+    border: 1px solid $borderColor;
+    width: 80%;
+    height: auto;
+    margin: 15px auto;
+    .all-icon-1{
+      display: flex;
+      justify-content: space-around;
+      
+    }
+    .all-icon-2{
+      display: flex;
+      justify-content: space-around;
+      
+    }
+    .icon-in-all{
+      border: 1px solid $borderColor;
+      height: 115px;
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  /*------------------End_Sec all-Clients-Review------------------*/
+
+ /*------------------Start_Sec Latest-Posts------------------*/
+.Latest-Posts{
+  @extend .Services;
+  margin-top: 30px;
+}
+.all-Latest-Posts{
+  border: 1px solid $borderColor;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  .photo1in-all-Latest{
+    border: 1px solid $borderColor;
+    width: 360px;
+    height: auto;
+    margin: 20px 0px;
+    @include Border_Radius;
+    @include boxshadow;
+    &:hover{
+      transform: translateY(-10px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+      }
+    .photo1in{
+      border: 1px solid $borderColor;
+      height: 250px;
+      border-top-left-radius:30px ;
+      border-top-right-radius:30px;
+      background-color: #f9f9f9;
+      span{
+        background: #ff4c60; ;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        font-size: 14px;
+        padding: 6px 8px;
+        position: relative;
+        left: 25px;
+        z-index: 5;
+        a{
+          color: #fff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+      .pl1{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius:30px ;
+        border-top-right-radius:30px;
+        &:hover{
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        }
+      }
+      
+      }
+      .text-photo{
+        border: 1px solid $borderColor;
+        height: auto;/*150px*/
+        padding: 10px 10px;
+        background-color: #fff;
+        border-bottom-left-radius:30px ;
+        border-bottom-right-radius:30px;
+      h3{
+        color: #353353;
+        font-weight: 700;
+          font-size: 23px;
+          padding: 20px 20px;
+        &:hover{
+          color: #ff4c60;
+          transition: all .3s ease-in-out;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          -ms-transition: all .3s ease-in-out;
+          -o-transition: all .3s ease-in-out;
+        }
+      }
+        p{
+        color: #353353;
+        padding: 10px 20px;
+        font-weight: bold
+      }
+      }
+      
+}
+}
+
+.btn-lastest-posts{
+  @extend .Services;
+  text-align: center;
+  margin-top: 40px;
+  button{
+    @include buttons;
+  }
+}
+/*------------------End_Sec Latest-Posts------------------*/
+
+
+/*------------------Start_Sec Get-in-Touch------------------*/
+.Get-in-Touch-For-form{
+  @extend .Services;
+  margin-top: 30px;
+}
+
+.all-form{
+  border: 1px solid $borderColor;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  .text-form{
+    border: 1px solid $borderColor;
+    width: auto;
+    height: auto;
+    padding: 20px 10px;
+    background-image: url(../img/map.svg);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    h3{
+    color: #454360;
+    font-weight: 700;
+    font-size: 23px;
+    padding: 10px 1px;
+    }
+    p{
+      color: #454360;
+      a{
+        text-decoration: none;
+        color: #ff4c60;
+        &:hover{
+          color:#454360;
+        }
+      }
+    }
+  }
+  .form-to-form{
+    border: 1px solid $borderColor;
+    height: auto;
+    padding: 15px 15px;
+    width: 650px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .form1{
+      border: 1px solid $borderColor;
+      @include Border_Radius;
+      width: 300px;
+      height: 60px;
+      margin: 15px 0px;
+      @include boxshadow;
+      input[type="text"]{
+        @include ST_Form;
+      }
+      input[type="email"]{
+        @include ST_Form;
+      }
+    }
+    .form2{
+      margin-top: 30px;
+      border: 1px solid $borderColor;
+      display: block;
+      width: 100%;
+      height: 60px;
+      @include Border_Radius;
+      @include boxshadow;
+      input[type="text"]{
+        @include ST_Form;
+        
+      }
+    }
+    .form3{
+      border: 1px solid $borderColor;
+      width: 100%;
+      height: 200px;
+      margin-top: 30px;
+      @include Border_Radius;
+      @include boxshadow;
+      textarea[placeholder="Massage"]{
+        @include ST_Form;
+        padding: 10px 20px;
+        resize: none;
+      }
+    }
+    .btnsr{
+      border: 1px solid $borderColor;
+      margin-top: 15px;
+      width: 100%;
+      height: 60px;
+      @include Border_Radius;
+      button{
+        @include buttons;
+        margin-top: 5px ;
+      }
+      }
+  }
+  
+}
+/*------------------End_Sec Get-in-Touch------------------*/
+
+/*------------------Start_Sec End------------------*/
+.end{
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+  height: 50px;
+  text-align: center;
+    padding: 20px 0;
+  p{
+    font-size: 15px;
+  }
+}
+/*------------------End_Sec End------------------*/
+
+
+
+@media (min-width: 250px) and (max-width: 606px) {
+  .con-for-sec-About-me {
+    width: 100%;
+  }
+  .all-text-Development::before {
+    display: none;
+  }
+  .con-for-sec-About-me .all-text-Development .cv-text-for-About-me {
+    width: 350px;
+    height: 300px;
+    margin: auto;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 30px;
+  }
+  .con-for-sec-About-me .all-text-Development .Development-for-about-me {
+    width: 350px;
+    height: 300px;
+    padding: 0px 25px;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1 {
+    width: auto;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .in-progress {
+    width: 260px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr2 {
+    width: 280px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr3 {
+    width: 250px;
+  }
+  .all-icon-pro {
+    justify-content: flex-start;
+  }
+  .link-for-Recent-Works {
+    display: none;
+  }
+  .all-Clients-Review{
+    width: 100%;
+  }
+}
+
+/**----------------*/
+@media (min-width: 260px) and (max-width: 800px){
+  .all-Latest-Posts{
+    flex-direction: column;
+    align-items: center;
+    .photo1in-all-Latest{
+      width: 400px;
+    }
+  }
+}
+
+/*----------------*/
+@media (min-width: 607px) and (max-width: 759px) {
+  .con-for-sec-About-me {
+    width: 100%;
+  }
+  .all-text-Development::before {
+    display: none;
+  }
+  .con-for-sec-About-me .all-text-Development .cv-text-for-About-me {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: unset;
+  }
+  .con-for-sec-About-me .all-text-Development .Development-for-about-me {
+    width: 300px;
+    height: 300px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: unset;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1 {
+    width: auto;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .in-progress {
+    width: 260px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr2 {
+    width: 280px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr3 {
+    width: 250px;
+  }
+  .link-for-Recent-Works {
+    display: none;
+  }
+  .all-Clients-Review{
+    width: 100%;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1047px) {
+  .all-text-Development::before {
+    display: none;
+  }
+  .con-for-sec-About-me .all-text-Development .cv-text-for-About-me {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: unset;
+  }
+  .con-for-sec-About-me .all-text-Development .Development-for-about-me {
+    width: 300px;
+    height: 300px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: unset;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1 {
+    width: auto;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .in-progress {
+    width: 260px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr2 {
+    width: 280px;
+  }
+  .con-for-sec-About-me
+    .all-text-Development
+    .Development-for-about-me
+    .out-s-pr1
+    .pr3 {
+    width: 250px;
+  }
+  .link-for-Recent-Works {
+    display: none;
+  }
+}
+/*------------------------------------*/
+@media (min-width: 888px) and (max-width: 1334px){
+  .all-plans{
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width:300px) and (max-width: 795px){
+.all-form .form-to-form .form1{
+  width: 100%;
+}
+}
+/*------------------------------------*/
+@media (min-width:400px) and (max-width: 650px){
+  .all-icon-beforall-Clients .all-icon-1{
+    flex-wrap: wrap;
+  }
+  .all-icon-beforall-Clients .all-icon-1 .icon-in-all{
+   width: 200px;
+  }
+  .all-icon-beforall-Clients .all-icon-2{
+    flex-wrap: wrap;
+  }
+  .all-icon-beforall-Clients .all-icon-2 .icon-in-all{
+    width: 200px;
+  }
+}
+
+// .all-icon-beforall-Clients
+/*--------------------------------------------*/
+@media (min-width: 250px) and (max-width: 1282px) {
+  .container-sub .container {
+    height: auto;
+  }
+  .container-sub .container .link {
+    display: none;
+    width: 100%;
+  }
+  .container-sub .container .link ul {
+    float: none;
+  }
+  .container-sub .container .link ul li {
+    display: block;
+  }
+  .container-sub .container .link ul li a {
+    padding-right: 100%;
+  }
+  .link-for-Recent-Works {
+    display: none;
+  }
+}
+@media (min-width: 1282px) {
+  .btnn {
+    display: none;
+  }
+}
